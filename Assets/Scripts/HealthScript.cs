@@ -14,7 +14,7 @@ public class HealthScript : MonoBehaviour
         ShotScript shot = other.gameObject.GetComponent<ShotScript>();
         if (shot != null) {
             // prevent friendly fire
-            if (shot.forEnemy && isEnemy) {
+            if (shot.fromPlayer && isEnemy || !shot.fromPlayer && !isEnemy) {
                 Damage(shot.damage);
                 Destroy(shot.gameObject);
             }

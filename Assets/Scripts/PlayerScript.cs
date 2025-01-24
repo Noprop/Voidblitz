@@ -15,7 +15,7 @@ public class PlayerScript : MonoBehaviour
         if (shoot) {
             WeaponScript weapon = GetComponent<WeaponScript>();
             if (weapon != null) {
-                weapon.Attack(false);
+                weapon.Attack(true);
             }
         }
 
