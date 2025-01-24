@@ -6,7 +6,7 @@ public class EnemyScript : MonoBehaviour
 
 
     void Start() {
-       weapon = GetComponent<WeaponScript>(); 
+       weapon = GetComponentInChildren<WeaponScript>(); 
     }
 
     void Update() {
