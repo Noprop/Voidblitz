@@ -105,7 +105,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e70ffed969ae34041b5058d5b757c0b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: {x: 3, y: 3}
+  speed: {x: 4, y: 4}
   direction: {x: -1, y: 0}
 --- !u!50 &1083604781510775418
 Rigidbody2D:
@@ -251,4 +251,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shotPrefab: {fileID: 2937602778193455928, guid: ca14cd2d4aac8467db9f21d0cef8d4a8, type: 3}
-  shootingRate: 0.5
+  shootingRate: 0.8

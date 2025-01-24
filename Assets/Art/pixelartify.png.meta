@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: e74810a2c34ca4cd2aa07ba22a6ad77c
+guid: e32f0ac4bf7aa46b18ff2790070b1f9e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5828100051483643893
-    second: planet_assets_0
+      213: -4040011082562483555
+    second: pixelartify_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: planet_assets_0
+      name: pixelartify_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1024
-        height: 869
+        width: 946
+        height: 946
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b00b1ebb1ed6e1fa0800000000000000
-      internalID: -5828100051483643893
+      spriteID: d9ac837435ffee7c0800000000000000
+      internalID: -4040011082562483555
       vertices: []
       indices: 
       edges: []
@@ -147,8 +147,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      planet_assets_0: -5828100051483643893
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
