@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5865444184351156369}
   - component: {fileID: 4205054972738161792}
   - component: {fileID: 6551164255302526587}
+  - component: {fileID: 8816475673074485062}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -181,3 +182,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 25
   isEnemy: 0
+--- !u!114 &8816475673074485062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9043763443442738303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ed68799c88034d0981ff55a9dcf9621, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shotPrefab: {fileID: 2937602778193455928, guid: fd5694e041cc94366a6bf70663cbe4bc, type: 3}
+  shootingRate: 0.25

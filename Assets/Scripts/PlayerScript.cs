@@ -10,6 +10,15 @@ public class PlayerScript : MonoBehaviour
     // void Start() {}
 
     void Update() {
+        bool shoot = Input.GetKeyDown(KeyCode.Space);
+
+        if (shoot) {
+            WeaponScript weapon = GetComponent<WeaponScript>();
+            if (weapon != null) {
+                weapon.Attack(false);
+            }
+        }
+
         float inputX = Input.GetAxis("Horizontal");
         float inputY = Input.GetAxis("Vertical");
 
