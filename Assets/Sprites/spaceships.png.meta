@@ -204,6 +204,50 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: spaceships_0
+      rect:
+        serializedVersion: 2
+        x: 4402
+        y: 5040
+        width: 576
+        height: 597
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 286076529edd4455ba46c0dbdc5c68f9
+      internalID: 1898189569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spaceships_1
+      rect:
+        serializedVersion: 2
+        x: 5118
+        y: 5040
+        width: 604
+        height: 579
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0b673a16e6e6400c8f96c3487623a6c
+      internalID: -1145811087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
@@ -222,6 +266,8 @@ TextureImporter:
       ship_1: -673967863
       ship_2: -979291537
       ship_3: -489946885
+      spaceships_0: 1898189569
+      spaceships_1: -1145811087
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,8 +1,9 @@
 using UnityEngine;
 
-public class PlayerScript : MonoBehaviour
+public class MoveScript : MonoBehaviour
 {
     public Vector2 speed = new Vector2(15, 15);
+    public Vector2 direction = new Vector2(-1, 0);
 
     private Vector2 movement;
     private Rigidbody2D rigidbodyComponent;
@@ -10,12 +11,9 @@ public class PlayerScript : MonoBehaviour
     // void Start() {}
 
     void Update() {
-        float inputX = Input.GetAxis("Horizontal");
-        float inputY = Input.GetAxis("Vertical");
-
         movement = new Vector2(
-            speed.x * inputX,
-            speed.y * inputY
+            speed.x * direction.x,
+            speed.y * direction.y
         );
     }
 
