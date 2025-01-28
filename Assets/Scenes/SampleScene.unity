@@ -194,7 +194,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 145029959
   m_SortingLayer: 1
-  m_SortingOrder: 0
+  m_SortingOrder: -10
   m_Sprite: {fileID: -4040011082562483555, guid: e32f0ac4bf7aa46b18ff2790070b1f9e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -323,6 +323,7 @@ MonoBehaviour:
   speed: {x: 1.5, y: 1.5}
   direction: {x: -1, y: 0}
   isLinkedToCamera: 0
+  isLooping: 0
 --- !u!4 &275256246 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9213704653307529161, guid: efa00ff8d5fda48359543f530792ae79, type: 3}
@@ -380,6 +381,7 @@ MonoBehaviour:
   speed: {x: 2, y: 2}
   direction: {x: -1, y: 0}
   isLinkedToCamera: 0
+  isLooping: 0
 --- !u!4 &373991619 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4124673434848192789, guid: 5fd32246b2a23416692b8fce5d0cec70, type: 3}
@@ -718,6 +720,7 @@ MonoBehaviour:
   speed: {x: 0.7, y: 0.7}
   direction: {x: -1, y: 0}
   isLinkedToCamera: 0
+  isLooping: 1
 --- !u!4 &958148397 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7235887064237525319, guid: 811d0ae0a311d4fd6afee88483305cdf, type: 3}
@@ -1156,7 +1159,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 145029959
   m_SortingLayer: 1
-  m_SortingOrder: 0
+  m_SortingOrder: -10
   m_Sprite: {fileID: -4040011082562483555, guid: e32f0ac4bf7aa46b18ff2790070b1f9e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1295,7 +1298,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 145029959
   m_SortingLayer: 1
-  m_SortingOrder: 0
+  m_SortingOrder: -10
   m_Sprite: {fileID: -4040011082562483555, guid: e32f0ac4bf7aa46b18ff2790070b1f9e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

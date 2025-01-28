@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -10,6 +11,7 @@ public class ScrollScript : MonoBehaviour
     public bool isLooping = false;
 
     private List<SpriteRenderer> backgroundPart;
+    private bool waitForStartup;
 
     void Start() {
         // find the three nebula backgrounds and add to a list
@@ -28,6 +30,8 @@ public class ScrollScript : MonoBehaviour
             backgroundPart = backgroundPart.OrderBy(
                 t => t.transform.position.x
             ).ToList();
+
+            StartCoroutine(EnableVisibilityChecks());
         }
     }
 
@@ -51,6 +55,7 @@ public class ScrollScript : MonoBehaviour
             if (firstChild != null && firstChild.transform.position.x < Camera.main.transform.position.x) {
                 // caution, it checks from any camera
                 if (!firstChild.isVisible) {
+                    if (!waitForStartup) return;
                     SpriteRenderer lastChild = backgroundPart.LastOrDefault();
 
                     Vector3 lastPosition = lastChild.transform.position;
@@ -63,5 +68,10 @@ public class ScrollScript : MonoBehaviour
                 }
             }
         }
+    }
+
+    IEnumerator EnableVisibilityChecks() {
+        yield return new WaitForEndOfFrame();
+        waitForStartup = true;
     }
 }
