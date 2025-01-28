@@ -2,20 +2,28 @@ using UnityEngine;
 
 public class PlayerScript : MonoBehaviour {
     public Vector2 speed = new Vector2(15, 15);
+    public GameObject gameMenuPanel;
+    public GameObject gameOverPanel;
 
     private Vector2 movement;
     private Rigidbody2D rigidbodyComponent;
     private HealthScript health;
-    private GameOver gameOver;
+    private GameMenu gameMenu;
+    private GameMenu gameOver;
 
     void Start() {
         if (health == null) health = GetComponent<HealthScript>();
-        if (gameOver == null) gameOver = FindFirstObjectByType<GameOver>();
+
+        gameMenu = gameMenuPanel.GetComponent<GameMenu>();
+        gameOver = gameOverPanel.GetComponent<GameMenu>();
     }
 
     // shoot via the space button
     void Update() {
         bool shoot = Input.GetKeyDown(KeyCode.Space);
+        bool pause = Input.GetKeyDown(KeyCode.Escape);
+        if (pause) gameMenu.HandlePause();
+
         transform.rotation = Quaternion.Euler(0, 0, -90);
 
         if (shoot) {
@@ -52,8 +60,7 @@ public class PlayerScript : MonoBehaviour {
 
     // display buttons on death
     private void OnDestroy() {
-        var gameOver = FindFirstObjectByType<GameOver>();
-        gameOver.ShowButtons();
+        if (gameOver != null) gameOver.ShowButtons();
         Time.timeScale = 0f;
     }
 }
