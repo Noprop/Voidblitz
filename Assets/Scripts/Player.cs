@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PlayerScript : MonoBehaviour {
+public class Player : MonoBehaviour {
     public Vector2 speed = new Vector2(15, 15);
     public GameObject gameMenuPanel;
     public GameObject gameOverPanel;
@@ -27,7 +27,7 @@ public class PlayerScript : MonoBehaviour {
         transform.rotation = Quaternion.Euler(0, 0, -90);
 
         if (shoot) {
-            WeaponScript weapon = GetComponentInChildren<WeaponScript>();
+            Weapon weapon = GetComponentInChildren<Weapon>();
             if (weapon != null) {
                 weapon.Attack(true);
             }

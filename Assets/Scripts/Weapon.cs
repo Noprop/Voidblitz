@@ -1,7 +1,6 @@
 using UnityEngine;
 
-public class WeaponScript : MonoBehaviour
-{
+public class Weapon : MonoBehaviour {
     // the ammo itself and adjustable shooting rate
     public Transform shotPrefab;
     public float shootingRate = 0.1f;
@@ -28,7 +27,7 @@ public class WeaponScript : MonoBehaviour
             shotTransform.position = this.transform.position;
 
             // initialize our ammo
-            ShotScript shot = shotTransform.GetComponent<ShotScript>();
+            Shot shot = shotTransform.GetComponent<Shot>();
             if (shot != null) {
                 shot.fromPlayer = isPlayer;
             }

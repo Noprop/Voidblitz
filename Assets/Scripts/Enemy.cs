@@ -2,11 +2,11 @@ using UnityEngine;
 
 public class EnemyScript : MonoBehaviour
 {
-    private WeaponScript weapon;
+    private Weapon weapon;
 
 
     void Start() {
-       weapon = GetComponentInChildren<WeaponScript>(); 
+       weapon = GetComponentInChildren<Weapon>(); 
     }
 
     void Update() {
