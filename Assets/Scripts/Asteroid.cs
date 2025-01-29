@@ -9,15 +9,16 @@ public class Asteroid : HealthBase {
         explode = GetComponent<Animator>();
     }
 
-    public void UpdateHealth(int hp, int maxHp) {
+    public override void OnHealthUpdate(int hp, int maxHp) {
+        Debug.Log("healh update #1");
         float adjustedFill = Mathf.Clamp01((float)hp / maxHp);
         slider.value = adjustedFill;
     }
 
-    public void DestroySelf() {
+    public override void DestroySelf(GameObject self) {
         Canvas canvas = slider.GetComponentInParent<Canvas>();
         canvas.enabled = false;
         explode.Play("Asteroid_Explode");
-        Destroy(gameObject, explode.GetCurrentAnimatorStateInfo(0).length);
+        Destroy(self, explode.GetCurrentAnimatorStateInfo(0).length);
     }
 }
