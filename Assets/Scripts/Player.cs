@@ -15,49 +15,53 @@ public class Player : HealthBase {
         gameOver = gameOverPanel.GetComponent<GameMenu>();
     }
 
-    // shoot via the space button
     void Update() {
-        bool shoot = Input.GetKeyDown(KeyCode.Space);
         bool pause = Input.GetKeyDown(KeyCode.Escape);
         if (pause) gameMenu.HandlePause();
 
-        transform.rotation = Quaternion.Euler(0, 0, -90);
+        // Obtain the direction from the ship to the player's cursor
+        Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector2 direction = new Vector2(
+            mousePosition.x - transform.position.x,
+            mousePosition.y - transform.position.y
+        );
 
-        if (shoot) {
+        // Point ship towards mouse cursor
+        // note: ship sprite is facing upwards by default
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 90;
+        transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+
+        // Fire weapon
+        bool shoot = Input.GetKey(KeyCode.Space);
+        bool shoot2 = Input.GetMouseButton(0);
+        if (shoot || shoot2) {
             Weapon weapon = GetComponentInChildren<Weapon>();
             if (weapon != null) {
                 weapon.Attack(true);
             }
         }
 
-        float inputX = Input.GetAxis("Horizontal");
-        float inputY = Input.GetAxis("Vertical");
-
-        movement = new Vector2(
-            speed.x * inputX,
-            speed.y * inputY
-        );
+        // Only check for ad or left-right arrows
+        float verticalInput = Input.GetAxis("Horizontal");
+        movement = new Vector2(0, speed.y * verticalInput * -1);
     }
 
     void FixedUpdate() {
         if (rigidbodyComponent == null) rigidbodyComponent = GetComponent<Rigidbody2D>();
-
         rigidbodyComponent.linearVelocity = movement;
     }
 
-    // damage enemies and self on collision and ensure we don't go spinning
     private void OnCollisionEnter2D(Collision2D other) {
         EnemyScript enemy = other.gameObject.GetComponent<EnemyScript>();
         if (enemy != null) {
             Destroy(other.gameObject);
             hp -= 1;
         }
-        transform.rotation = Quaternion.Euler(0, 0, -90);
     }
 
-    // display buttons on death
-    private void OnDestroy() {
+    public override void DestroySelf(GameObject self) {
         if (gameOver != null) gameOver.ShowButtons();
         Time.timeScale = 0f;
+        Destroy(self);
     }
 }

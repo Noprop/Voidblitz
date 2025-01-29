@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections;
 
 public class GameController : MonoBehaviour {
-    public int enemyCount = 20;
+    public int enemyCount = 10;
     public int asteroidCount = 5;
 
     // prefabs
@@ -28,12 +28,12 @@ public class GameController : MonoBehaviour {
     }
 
     IEnumerator SpawnEnemies() {
-        // spawn an enemy every 0.5 seconds, at a random y position
+        // spawn an enemy every 1.5 seconds, at a random y position
         while (enemiesSpawned < enemyCount) {
             Vector3 spawnPosition = GetSpawnPosition();
             Instantiate(enemy, spawnPosition, Quaternion.identity, foreground);
             enemiesSpawned++;
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(2f);
         }
     }
 
@@ -43,7 +43,7 @@ public class GameController : MonoBehaviour {
             Vector3 spawnPosition = GetSpawnPosition();
             Instantiate(asteroid, spawnPosition, Quaternion.identity, foreground);
             asteroidsSpawned++;
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(5f);
         }
     }
 

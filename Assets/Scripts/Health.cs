@@ -6,7 +6,7 @@ public class HealthBase : MonoBehaviour {
     public bool isEnemy = true;
 
     public virtual void DestroySelf(GameObject self) {
-        Destroy(gameObject);
+        Destroy(self);
     }
     public virtual void OnHealthUpdate(int currentHp, int maxHp) { }
 
