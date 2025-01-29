@@ -1,19 +1,16 @@
 using UnityEngine;
 
-public class Player : MonoBehaviour {
+public class Player : HealthBase {
     public Vector2 speed = new Vector2(15, 15);
     public GameObject gameMenuPanel;
     public GameObject gameOverPanel;
 
     private Vector2 movement;
     private Rigidbody2D rigidbodyComponent;
-    private HealthScript health;
     private GameMenu gameMenu;
     private GameMenu gameOver;
 
     void Start() {
-        if (health == null) health = GetComponent<HealthScript>();
-
         gameMenu = gameMenuPanel.GetComponent<GameMenu>();
         gameOver = gameOverPanel.GetComponent<GameMenu>();
     }
@@ -53,7 +50,7 @@ public class Player : MonoBehaviour {
         EnemyScript enemy = other.gameObject.GetComponent<EnemyScript>();
         if (enemy != null) {
             Destroy(other.gameObject);
-            health.hp -= 1;
+            hp -= 1;
         }
         transform.rotation = Quaternion.Euler(0, 0, -90);
     }

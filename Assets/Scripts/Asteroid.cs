@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Asteroid : MonoBehaviour {
+public class Asteroid : HealthBase {
     [SerializeField] private Slider slider;
     private Animator explode;
 
@@ -14,7 +14,7 @@ public class Asteroid : MonoBehaviour {
         slider.value = adjustedFill;
     }
 
-    public void DestroyAsteroid() {
+    public void DestroySelf() {
         Canvas canvas = slider.GetComponentInParent<Canvas>();
         canvas.enabled = false;
         explode.Play("Asteroid_Explode");

@@ -1,21 +1,19 @@
 using UnityEngine;
 
-public class HealthScript : MonoBehaviour {
+public class HealthBase : MonoBehaviour {
     public int maxHp = 1;
     public int hp = 1;
     public bool isEnemy = true;
 
-    private Asteroid asteroid;
-
-    void Start() {
-        asteroid = gameObject.GetComponent<Asteroid>();
+    public virtual void DestroySelf(GameObject self) {
+        Destroy(gameObject);
     }
+    public virtual void OnHealthUpdate(int currentHp, int maxHp) {}
 
-    public void Damage(int damageCount){
+    public void Damage(int damageCount) {
         hp -= damageCount;
-        // if (hp <= 0) Destroy(gameObject);
-        if (hp <= 0 && asteroid != null) asteroid.DestroyAsteroid();
-        if (asteroid != null) asteroid.UpdateHealth(hp, maxHp);
+        if (hp <= 0) DestroySelf(gameObject);
+        OnHealthUpdate(hp, maxHp);
     }
     private void OnTriggerEnter2D(Collider2D other) {
         Shot shot = other.gameObject.GetComponent<Shot>();

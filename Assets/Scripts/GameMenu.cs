@@ -1,23 +1,27 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameMenu : MonoBehaviour
-{
+public class GameMenu : MonoBehaviour {
+    private CanvasGroup canvasGroup;
+
     void Awake() {
-        // ensure return from menu resets the timescale
         Time.timeScale = 1f;
-        gameObject.SetActive(false);
+        canvasGroup = GetComponent<CanvasGroup>();
+        HideButtons();
     }
 
-    // stop game when showing buttons 
-    // vice versa for hiding the buttons
     public void ShowButtons() {
-        if (gameObject != null) gameObject.SetActive(true);
+        canvasGroup.alpha = 1f;
+        canvasGroup.interactable = true;
+        canvasGroup.blocksRaycasts = true;
         Time.timeScale = 0f;
     }
+
     public void HideButtons() {
-        if (gameObject != null) gameObject.SetActive(false);
+        canvasGroup.alpha = 0f;
+        canvasGroup.interactable = false;
         Time.timeScale = 1f;
+        canvasGroup.blocksRaycasts = false;
     }
 
     // functions to be called by the buttons
@@ -28,7 +32,8 @@ public class GameMenu : MonoBehaviour
         SceneManager.LoadScene("Voidblitz");
     }
     public void HandlePause() {
-        if (!gameObject.activeSelf) ShowButtons();
+        Debug.Log("handling pause");
+        if (canvasGroup.alpha < 0.1f) ShowButtons();
         else HideButtons();
     }
 }
