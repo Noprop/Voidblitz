@@ -32,7 +32,6 @@ public class GameMenu : MonoBehaviour {
         SceneManager.LoadScene("Voidblitz");
     }
     public void HandlePause() {
-        Debug.Log("handling pause");
         if (canvasGroup.alpha < 0.1f) ShowButtons();
         else HideButtons();
     }

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - GameMenu
   - GameOverMenu
+  - Foreground
   layers:
   - Default
   - TransparentFX

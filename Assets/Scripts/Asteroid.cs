@@ -10,7 +10,6 @@ public class Asteroid : HealthBase {
     }
 
     public override void OnHealthUpdate(int hp, int maxHp) {
-        Debug.Log("healh update #1");
         float adjustedFill = Mathf.Clamp01((float)hp / maxHp);
         slider.value = adjustedFill;
     }

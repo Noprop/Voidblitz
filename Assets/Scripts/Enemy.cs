@@ -1,9 +1,7 @@
 using UnityEngine;
 
-public class EnemyScript : MonoBehaviour
-{
+public class EnemyScript : HealthBase {
     private Weapon weapon;
-
 
     void Start() {
        weapon = GetComponentInChildren<Weapon>(); 

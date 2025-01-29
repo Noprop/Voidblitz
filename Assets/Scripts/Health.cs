@@ -8,9 +8,7 @@ public class HealthBase : MonoBehaviour {
     public virtual void DestroySelf(GameObject self) {
         Destroy(gameObject);
     }
-    public virtual void OnHealthUpdate(int currentHp, int maxHp) {
-        Debug.Log("healh update #2");
-     }
+    public virtual void OnHealthUpdate(int currentHp, int maxHp) { }
 
     public void Damage(int damageCount) {
         hp -= damageCount;
