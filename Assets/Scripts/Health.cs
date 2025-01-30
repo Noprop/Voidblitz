@@ -12,7 +12,6 @@ public class HealthBase : MonoBehaviour {
     }
 
     public virtual void DestroySelf(GameObject self) {
-        Debug.Log("Destroying self");
         Destroy(self);
     }
 

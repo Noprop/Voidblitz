@@ -49,7 +49,7 @@ public class GameController : MonoBehaviour {
 
     Vector3 GetSpawnPosition() {
         // obtain a spawn position to the right of the camera, at a random y
-        float randomY = Random.Range(0f, 1f);
+        float randomY = Random.Range(0.05f, 0.95f);
         Vector3 viewportPosition = new Vector3(1.1f, randomY, 0);
         Vector3 worldPosition = Camera.main.ViewportToWorldPoint(viewportPosition);
         worldPosition.z = 0;
