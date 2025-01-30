@@ -592,12 +592,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHp: 10
-  hp: 10
+  hp: 2
   isEnemy: 0
   speed: {x: 15, y: 15}
   gameMenuPanel: {fileID: 0}
   gameOverPanel: {fileID: 0}
   scoreboardObj: {fileID: 0}
+  gameOverScore: {fileID: 0}
+  gameOverHighScore: {fileID: 0}
   score: 0
 --- !u!114 &8558813072870182243
 MonoBehaviour:
@@ -613,5 +615,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthBarCanvas: {fileID: 5333867983111009274}
   healthSlider: {fileID: 4020638067317459663}
-  camera: {fileID: 0}
   target: {fileID: 0}

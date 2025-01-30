@@ -6,6 +6,8 @@ public class Player : HealthBase {
     public GameObject gameMenuPanel;
     public GameObject gameOverPanel;
     public GameObject scoreboardObj;
+    public TextMeshProUGUI gameOverScore;
+    public TextMeshProUGUI gameOverHighScore;
     public int score = 0;
 
     private Vector2 movement;
@@ -13,11 +15,13 @@ public class Player : HealthBase {
     private GameMenu gameMenu;
     private GameMenu gameOver;
     private TextMeshProUGUI scoreboard;
+    private static int highscore = 0;
 
     void Start() {
         gameMenu = gameMenuPanel.GetComponent<GameMenu>();
         gameOver = gameOverPanel.GetComponent<GameMenu>();
         scoreboard = scoreboardObj.GetComponentInChildren<TextMeshProUGUI>();
+        scoreboardObj.SetActive(true);
     }
 
     void Update() {
@@ -71,8 +75,14 @@ public class Player : HealthBase {
     }
 
     public override void DestroySelf(GameObject self) {
-        if (gameOver != null) gameOver.ShowButtons();
+        if (score > highscore) highscore = score;
+        scoreboardObj.SetActive(false);
         Time.timeScale = 0f;
+
+        gameOverScore.text = $"Score: {score}";
+        gameOverHighScore.text = $"Highscore: {highscore}";
+
+        if (gameOver != null) gameOver.ShowButtons();
         Destroy(self);
     }
 }
