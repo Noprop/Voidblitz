@@ -50,6 +50,7 @@ GameObject:
   - component: {fileID: 1083604781510775418}
   - component: {fileID: 9123187905694347647}
   - component: {fileID: 5121310767573245533}
+  - component: {fileID: 1926977425384404431}
   m_Layer: 0
   m_Name: EnemyShip
   m_TagString: Untagged
@@ -231,6 +232,21 @@ MonoBehaviour:
   maxHp: 1
   hp: 1
   isEnemy: 1
+--- !u!114 &1926977425384404431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1574903879950068783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fda3aaaf66a494ed0b9bc900f29cb618, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthBarCanvas: {fileID: 3750374311474507203}
+  healthSlider: {fileID: 5096464108878069995}
+  target: {fileID: 0}
 --- !u!1 &4548382983094238197
 GameObject:
   m_ObjectHideFlags: 0

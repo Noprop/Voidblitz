@@ -1305,6 +1305,17 @@ Transform:
   - {fileID: 5123521}
   m_Father: {fileID: 239075248}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1228403545 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6970749739681367301, guid: 70192ae8ae6694731b4cd66a0ca34853, type: 3}
+  m_PrefabInstance: {fileID: 6417408385124333804}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1242586527
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2371,6 +2382,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1619602509}
     m_Modifications:
+    - target: {fileID: 1275591769487917169, guid: efa00ff8d5fda48359543f530792ae79, type: 3}
+      propertyPath: camera
+      value: 
+      objectReference: {fileID: 519420031}
+    - target: {fileID: 1275591769487917169, guid: efa00ff8d5fda48359543f530792ae79, type: 3}
+      propertyPath: healthSlider
+      value: 
+      objectReference: {fileID: 1228403545}
     - target: {fileID: 1574903879950068783, guid: efa00ff8d5fda48359543f530792ae79, type: 3}
       propertyPath: m_Name
       value: EnemyShip
@@ -2589,6 +2608,22 @@ PrefabInstance:
       propertyPath: scoreboardObj
       value: 
       objectReference: {fileID: 1604029724}
+    - target: {fileID: 5333867983111009274, guid: 358df6444d15f4806b0710049206ced3, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 519420031}
+    - target: {fileID: 7152457624432902142, guid: 358df6444d15f4806b0710049206ced3, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7152457624432902142, guid: 358df6444d15f4806b0710049206ced3, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8558813072870182243, guid: 358df6444d15f4806b0710049206ced3, type: 3}
+      propertyPath: camera
+      value: 
+      objectReference: {fileID: 519420031}
     - target: {fileID: 9043763443442738303, guid: 358df6444d15f4806b0710049206ced3, type: 3}
       propertyPath: m_Name
       value: Player
@@ -2671,6 +2706,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5387490838762269608, guid: 70192ae8ae6694731b4cd66a0ca34853, type: 3}
+      propertyPath: camera
+      value: 
+      objectReference: {fileID: 519420031}
     - target: {fileID: 6107599717048346428, guid: 70192ae8ae6694731b4cd66a0ca34853, type: 3}
       propertyPath: m_Camera
       value: 

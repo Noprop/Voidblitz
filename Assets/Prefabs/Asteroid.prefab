@@ -215,6 +215,7 @@ GameObject:
   - component: {fileID: 6119690773026378195}
   - component: {fileID: 2354337774011036660}
   - component: {fileID: 4785258852464264658}
+  - component: {fileID: 5387490838762269608}
   m_Layer: 0
   m_Name: Asteroid
   m_TagString: Untagged
@@ -403,7 +404,6 @@ MonoBehaviour:
   maxHp: 3
   hp: 3
   isEnemy: 1
-  slider: {fileID: 6970749739681367301}
   coinPrefab: {fileID: 3483278342648011483, guid: f8f7bfaf8bfd74e9a8543e88c9fab9c9, type: 3}
 --- !u!114 &4785258852464264658
 MonoBehaviour:
@@ -419,6 +419,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: {x: 6, y: 6}
   direction: {x: -1, y: 0}
+--- !u!114 &5387490838762269608
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7917280105117335484}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fda3aaaf66a494ed0b9bc900f29cb618, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthBarCanvas: {fileID: 6107599717048346428}
+  healthSlider: {fileID: 6970749739681367301}
+  camera: {fileID: 0}
+  target: {fileID: 0}
 --- !u!1 &8981803769057778682
 GameObject:
   m_ObjectHideFlags: 0
