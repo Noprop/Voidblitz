@@ -1,12 +1,19 @@
 using UnityEngine;
-using UnityEngine.UI;
 
 public class Asteroid : HealthBase {
     [SerializeField] private GameObject coinPrefab;
     private Animator explode;
+    private SpriteRenderer rendererComponent;
+    private bool hasSpawned = false;
 
     void Start() {
         explode = GetComponent<Animator>();
+        rendererComponent = GetComponent<SpriteRenderer>();
+    }
+
+    void Update() {
+        if (!hasSpawned && rendererComponent.isVisible) hasSpawned = true;
+        if (hasSpawned && !rendererComponent.isVisible) Destroy(gameObject);
     }
 
     public override void DestroySelf(GameObject self) {

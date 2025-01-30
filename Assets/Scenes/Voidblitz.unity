@@ -554,6 +554,17 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &344670089 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4205054972738161792, guid: 358df6444d15f4806b0710049206ced3, type: 3}
+  m_PrefabInstance: {fileID: 4346136712237098167}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08296bace108d4a18bf591fc8c09eb78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &368952331
 GameObject:
   m_ObjectHideFlags: 0
@@ -1578,6 +1589,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Score
       objectReference: {fileID: 0}
+    - target: {fileID: 385660900948859444, guid: 5092e6723efa5422fb33df4898a6fd7f, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 240
+      objectReference: {fileID: 0}
+    - target: {fileID: 385660900948859444, guid: 5092e6723efa5422fb33df4898a6fd7f, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 130
+      objectReference: {fileID: 0}
     - target: {fileID: 2201321588653925974, guid: 5092e6723efa5422fb33df4898a6fd7f, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1657,6 +1676,10 @@ PrefabInstance:
     - target: {fileID: 2201321588653925974, guid: 5092e6723efa5422fb33df4898a6fd7f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3287167581891441410, guid: 5092e6723efa5422fb33df4898a6fd7f, type: 3}
+      propertyPath: m_text
+      value: 'Score: 0'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2401,6 +2424,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 519420031}
+    - target: {fileID: 5121310767573245533, guid: efa00ff8d5fda48359543f530792ae79, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 344670089}
     - target: {fileID: 8413929465495924402, guid: efa00ff8d5fda48359543f530792ae79, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0

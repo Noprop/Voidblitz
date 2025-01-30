@@ -1,7 +1,6 @@
 using UnityEngine;
 
 public class Weapon : MonoBehaviour {
-    // the ammo itself and adjustable shooting rate
     public Transform shotPrefab;
     public float shootingRate = 0.3f;
 
@@ -11,16 +10,15 @@ public class Weapon : MonoBehaviour {
     void Start() { 
         shootCooldown = 0f;
     }
-    // reduce shootCooldown by a constant amount
     void Update() {
         if (shootCooldown > 0) {
             shootCooldown -= Time.deltaTime;
         }
     }
 
-    // any object who inherits this WeaponScript can call Attack to fire their weapon
     public void Attack(bool isPlayer) {
         if (CanAttack) {
+            // slightly randommize the shooting rate for non-players
             if (!isPlayer) {
                 shootCooldown = shootingRate + Random.Range(0f, 0.5f);
             } else {
