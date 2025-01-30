@@ -16,6 +16,8 @@ public class HealthBase : MonoBehaviour {
         OnHealthUpdate(hp, maxHp);
     }
     private void OnTriggerEnter2D(Collider2D other) {
+        if (hp <= 0) return;
+
         Shot shot = other.gameObject.GetComponent<Shot>();
         if (shot != null) {
             // prevent friendly fire

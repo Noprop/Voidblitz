@@ -1,19 +1,23 @@
 using UnityEngine;
+using TMPro;
 
 public class Player : HealthBase {
     public Vector2 speed = new Vector2(15, 15);
     public GameObject gameMenuPanel;
     public GameObject gameOverPanel;
+    public GameObject scoreboardObj;
     public int score = 0;
 
     private Vector2 movement;
     private Rigidbody2D rigidbodyComponent;
     private GameMenu gameMenu;
     private GameMenu gameOver;
+    private TextMeshProUGUI scoreboard;
 
     void Start() {
         gameMenu = gameMenuPanel.GetComponent<GameMenu>();
         gameOver = gameOverPanel.GetComponent<GameMenu>();
+        scoreboard = scoreboardObj.GetComponentInChildren<TextMeshProUGUI>();
     }
 
     void Update() {
@@ -51,6 +55,11 @@ public class Player : HealthBase {
     void FixedUpdate() {
         if (rigidbodyComponent == null) rigidbodyComponent = GetComponent<Rigidbody2D>();
         rigidbodyComponent.linearVelocity = movement;
+    }
+
+    public void IncreaseScore(int amount) {
+        score += amount;
+        scoreboard.text = $"Score: {score}";
     }
 
     private void OnCollisionEnter2D(Collision2D other) {
