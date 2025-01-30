@@ -42,8 +42,9 @@ public class Player : HealthBase {
         }
 
         // Only check for ad or left-right arrows
-        float verticalInput = Input.GetAxis("Horizontal");
-        movement = new Vector2(0, speed.y * verticalInput * -1);
+        float verticalInput = Input.GetAxis("Vertical");
+        float horizontalInput = Input.GetAxis("Horizontal");
+        movement = new Vector2(speed.x * horizontalInput, speed.y * verticalInput);
     }
 
     void FixedUpdate() {

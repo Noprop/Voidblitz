@@ -3,7 +3,7 @@ using UnityEngine;
 public class Weapon : MonoBehaviour {
     // the ammo itself and adjustable shooting rate
     public Transform shotPrefab;
-    public float shootingRate = 0.1f;
+    public float shootingRate = 0.2f;
 
     // track time between shots
     private float shootCooldown;
@@ -24,7 +24,7 @@ public class Weapon : MonoBehaviour {
             shootCooldown = shootingRate;
 
             var shotTransform = Instantiate(shotPrefab);
-            shotTransform.position = this.transform.position;
+            shotTransform.position = transform.position;
 
             // initialize our ammo
             Shot shot = shotTransform.GetComponent<Shot>();
@@ -35,9 +35,16 @@ public class Weapon : MonoBehaviour {
             // initialize direction of the ammo
             MoveScript move = shotTransform.gameObject.GetComponent<MoveScript>();
             if (move != null) {
-                if (isPlayer)
-                    move.direction = new Vector2(1, 0);
-                else
+                if (isPlayer) {
+                    // Rotate the direction by an additional -90 degrees for correct bullet direction
+                    Vector2 shootDirection = transform.up;
+                    float shootAngle = Mathf.Atan2(shootDirection.y, shootDirection.x) * Mathf.Rad2Deg - 90;
+                    Vector2 rotatedDirection = new Vector2(
+                        Mathf.Cos(shootAngle * Mathf.Deg2Rad),
+                        Mathf.Sin(shootAngle * Mathf.Deg2Rad)
+                    );
+                    move.direction = rotatedDirection;
+                } else
                     move.direction = new Vector2(-1, 0);
             }
         }
