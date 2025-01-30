@@ -404,6 +404,7 @@ MonoBehaviour:
   hp: 3
   isEnemy: 1
   slider: {fileID: 6970749739681367301}
+  coinPrefab: {fileID: 3483278342648011483, guid: f8f7bfaf8bfd74e9a8543e88c9fab9c9, type: 3}
 --- !u!114 &4785258852464264658
 MonoBehaviour:
   m_ObjectHideFlags: 0

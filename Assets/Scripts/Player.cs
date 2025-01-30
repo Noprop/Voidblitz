@@ -4,6 +4,7 @@ public class Player : HealthBase {
     public Vector2 speed = new Vector2(15, 15);
     public GameObject gameMenuPanel;
     public GameObject gameOverPanel;
+    public int score = 0;
 
     private Vector2 movement;
     private Rigidbody2D rigidbodyComponent;

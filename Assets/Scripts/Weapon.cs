@@ -3,7 +3,7 @@ using UnityEngine;
 public class Weapon : MonoBehaviour {
     // the ammo itself and adjustable shooting rate
     public Transform shotPrefab;
-    public float shootingRate = 0.2f;
+    public float shootingRate = 0.3f;
 
     // track time between shots
     private float shootCooldown;

@@ -39,3 +39,8 @@ https://ansimuz.itch.io/space-background
 Font:
 
 https://fonts.google.com/specimen/Press+Start+2P
+
+
+Coin:
+
+https://totuslotus.itch.io/pixel-coins
