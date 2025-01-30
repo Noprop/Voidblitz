@@ -21,7 +21,11 @@ public class Weapon : MonoBehaviour {
     // any object who inherits this WeaponScript can call Attack to fire their weapon
     public void Attack(bool isPlayer) {
         if (CanAttack) {
-            shootCooldown = shootingRate;
+            if (!isPlayer) {
+                shootCooldown = shootingRate + Random.Range(0f, 0.5f);
+            } else {
+                shootCooldown = shootingRate;
+            }
 
             var shotTransform = Instantiate(shotPrefab);
             shotTransform.position = transform.position;
