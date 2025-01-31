@@ -258,9 +258,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weapons:
-  - shotPrefab: {fileID: 2937602778193455928, guid: ca14cd2d4aac8467db9f21d0cef8d4a8, type: 3}
-    shootingRate: 0.8
-    isHoming: 0
+  - shotPrefab: {fileID: 2937602778193455928, guid: 4123e6c0c8d7f44e8b9dd12bb052b778, type: 3}
+    shootingRate: 3
+    isHoming: 1
 --- !u!1 &2787685620523516965
 GameObject:
   m_ObjectHideFlags: 0
@@ -531,7 +531,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e70ffed969ae34041b5058d5b757c0b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: {x: 4, y: 4}
+  speed: {x: 1.5, y: 1.5}
   direction: {x: -1, y: 0}
 --- !u!50 &273667298986204566
 Rigidbody2D:
@@ -622,6 +622,8 @@ MonoBehaviour:
   hp: 8
   isEnemy: 1
   player: {fileID: 0}
+  canDodge: 1
+  dodgeCooldown: 1
 --- !u!114 &4019811992686596379
 MonoBehaviour:
   m_ObjectHideFlags: 0

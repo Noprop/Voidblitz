@@ -17,9 +17,9 @@ public class Asteroid : HealthBase {
     }
 
     public override void DestroySelf(GameObject self) {
-        MoveScript moveScript = GetComponent<MoveScript>();
-        if (moveScript != null) {
-            moveScript.speed = new Vector2(0, 0);
+        Move move = GetComponent<Move>();
+        if (move != null) {
+            move.speed = new Vector2(0, 0);
         }
         explode.Play("Asteroid_Explode");
 

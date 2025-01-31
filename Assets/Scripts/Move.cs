@@ -1,7 +1,6 @@
 using UnityEngine;
 
-public class MoveScript : MonoBehaviour
-{
+public class Move : MonoBehaviour {
     // speed is the magnitude, direction is a unit vector
     public Vector2 speed = new Vector2(15, 15);
     public Vector2 direction = new Vector2(-1, 0);

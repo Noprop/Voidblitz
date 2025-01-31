@@ -14,6 +14,7 @@ public class GameController : MonoBehaviour {
     private Transform foreground; // where to place our entities
 
     void Start() {
+        return;
         // find the Foreground object by tag
         foreground = GameObject.FindGameObjectWithTag("Foreground")?.transform;
 

@@ -233,6 +233,8 @@ MonoBehaviour:
   hp: 1
   isEnemy: 1
   player: {fileID: 0}
+  canDodge: 0
+  dodgeCooldown: 0
 --- !u!114 &1926977425384404431
 MonoBehaviour:
   m_ObjectHideFlags: 0

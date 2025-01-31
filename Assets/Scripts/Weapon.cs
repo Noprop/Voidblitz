@@ -59,7 +59,7 @@ public class Weapon : MonoBehaviour {
                 homing.fromPlayer = isPlayer;
             }
         } else {
-            MoveScript move = shotTransform.GetComponent<MoveScript>();
+            Move move = shotTransform.GetComponent<Move>();
             if (move != null) {
                 if (isPlayer) {
                     // 1) Get the mouse position in world space
