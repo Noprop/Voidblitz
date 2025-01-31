@@ -8,14 +8,15 @@ public class Shot : MonoBehaviour {
         Destroy(gameObject, 20);
     }
 
-    void OnTriggerEnter(Collider other) {
+    private void OnTriggerEnter2D(Collider2D other) {
         Shot otherShot = other.GetComponent<Shot>();
         HomingMissile otherMissile = other.GetComponent<HomingMissile>();
 
         if (otherShot != null || otherMissile != null) {
             // Destroy both shots
             Destroy(gameObject);
-            Destroy(otherShot.gameObject);
+            if (otherShot) Destroy(otherShot.gameObject);
+            if (otherMissile) Destroy(otherMissile.gameObject);
         }
     }
 }
