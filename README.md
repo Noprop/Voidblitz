@@ -3,7 +3,6 @@ Space wallpaper (not used):
 
 https://wallpaperaccess.com/4k-nebula
 
-
 Used this to convert the nebula into pixelart, which helped ensure the continuity of the pixelart-game experience:
 
 https://pixelartify.com/editor

@@ -594,7 +594,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHp: 10
-  hp: 2
+  hp: 10
   isEnemy: 0
   speed: {x: 15, y: 15}
   gameMenuPanel: {fileID: 0}
@@ -603,6 +603,10 @@ MonoBehaviour:
   gameOverScore: {fileID: 0}
   gameOverHighScore: {fileID: 0}
   score: 0
+  shipWeaponObj: {fileID: 2857901752223322511}
+  shipSprites:
+  - {fileID: -489946885, guid: ea311ea66ae81451689ecc833d7d7c1c, type: 3}
+  - {fileID: -979291537, guid: ea311ea66ae81451689ecc833d7d7c1c, type: 3}
 --- !u!114 &8558813072870182243
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -25,4 +25,29 @@ public class MenuButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
     public void StartGame() {
         SceneManager.LoadScene("Voidblitz");
     }
+
+    public void ShipSelection() {
+        SceneManager.LoadScene("ShipSelection", LoadSceneMode.Single);
+    }
+
+    public void LoadCredits() {
+        SceneManager.LoadScene("Credits");
+    }
+
+    public void LoadControls() {
+        SceneManager.LoadScene("Controls");
+    }
+
+    public void LoadMainMenu() {
+        SceneManager.LoadScene("Menu");
+    }
+
+    public void QuitGame() {
+        Application.Quit();
+    }
+
+    public void SelectShip(int shipIndex) {
+        GameManager.Instance.selectedShipIndex = shipIndex;
+        SceneManager.LoadScene("Voidblitz", LoadSceneMode.Single);
+    }
 }

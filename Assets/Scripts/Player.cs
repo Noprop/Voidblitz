@@ -9,6 +9,7 @@ public class Player : HealthBase {
     public TextMeshProUGUI gameOverScore;
     public TextMeshProUGUI gameOverHighScore;
     public int score = 0;
+    public GameObject shipWeaponObj;
 
     private Vector2 movement;
     private Rigidbody2D rigidbodyComponent;
@@ -16,12 +17,32 @@ public class Player : HealthBase {
     private GameMenu gameOver;
     private TextMeshProUGUI scoreboard;
     private static int highscore = 0;
+    private Weapon shipWeapon;
+
+    [Header("Ship Graphics")]
+    [SerializeField] private Sprite[] shipSprites;
 
     void Start() {
         gameMenu = gameMenuPanel.GetComponent<GameMenu>();
         gameOver = gameOverPanel.GetComponent<GameMenu>();
         scoreboard = scoreboardObj.GetComponentInChildren<TextMeshProUGUI>();
         scoreboardObj.SetActive(true);
+        shipWeapon = shipWeaponObj.GetComponent<Weapon>();
+
+
+        if (GameManager.Instance != null) {
+            int idx = GameManager.Instance.selectedShipIndex;
+            GetComponent<SpriteRenderer>().sprite = shipSprites[idx];
+            if (idx == 0) {
+                hp = 10;
+                maxHp = 10;
+                shipWeapon.weapons[0].shootingRate = 0.3f;
+            } else {
+                hp = 20;
+                maxHp = 20;
+                shipWeapon.weapons[0].shootingRate = 0.5f;
+            }
+        }
     }
 
     void Update() {
