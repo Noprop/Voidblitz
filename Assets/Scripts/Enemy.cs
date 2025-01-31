@@ -2,7 +2,8 @@ using UnityEngine;
 using System.Collections;
 
 public class EnemyScript : HealthBase {
-    [SerializeField] private Player player;
+    private Player player;
+    private GameController gameController;
     private Weapon weapon;
     private SpriteRenderer rendererComponent;
     private bool hasSpawned = false;
@@ -18,6 +19,7 @@ public class EnemyScript : HealthBase {
         weapon = GetComponentInChildren<Weapon>(); 
         rendererComponent = GetComponent<SpriteRenderer>();
         enemyMove = GetComponent<Move>();
+        gameController = GameObject.FindGameObjectWithTag("GameController")?.GetComponent<GameController>();
 
         if (player == null) {
             player = GameObject.FindGameObjectWithTag("Player")?.GetComponent<Player>();
@@ -68,8 +70,16 @@ public class EnemyScript : HealthBase {
     }
 
     private void OnDestroy() {
-        if (hp <= 0) {
-            player.IncreaseScore(1);
+        if (canDodge) {
+            gameController.BossDestroyed();
+            player.AdjustScore(10);
+        } else {
+            if (hp <= 0) {
+                player.AdjustScore(2);
+            } else {
+                player.AdjustScore(-2);
+            }
+            gameController.EnemyDestroyed();
         }
     }
 

@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class Asteroid : HealthBase {
     [SerializeField] private GameObject coinPrefab;
+
+    private GameController gameController;
     private Animator explode;
     private SpriteRenderer rendererComponent;
     private bool hasSpawned = false;
@@ -9,6 +11,7 @@ public class Asteroid : HealthBase {
     void Start() {
         explode = GetComponent<Animator>();
         rendererComponent = GetComponent<SpriteRenderer>();
+        gameController = GameObject.FindGameObjectWithTag("GameController")?.GetComponent<GameController>();
     }
 
     void Update() {
@@ -29,5 +32,9 @@ public class Asteroid : HealthBase {
         }
 
         Destroy(self, explode.GetCurrentAnimatorStateInfo(0).length);
+    }
+
+    void OnDestroy() {
+        gameController.AsteroidDestroyed();
     }
 }

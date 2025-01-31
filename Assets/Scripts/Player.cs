@@ -73,16 +73,20 @@ public class Player : HealthBase {
         rigidbodyComponent.linearVelocity = movement;
     }
 
-    public void IncreaseScore(int amount) {
-        score += amount;
+    public void AdjustScore(int amount) {
+        score = score + amount;
         scoreboard.text = $"Score: {score}";
     }
 
     private void OnCollisionEnter2D(Collision2D other) {
         EnemyScript enemy = other.gameObject.GetComponent<EnemyScript>();
         if (enemy != null) {
-            Destroy(other.gameObject);
-            hp -= 1;
+            if (enemy.hp > 5) {
+                DestroySelf(gameObject);
+            } else {
+                Destroy(other.gameObject);
+                hp -= 1;
+            }
         }
     }
 
