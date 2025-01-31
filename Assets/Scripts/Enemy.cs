@@ -6,27 +6,38 @@ public class EnemyScript : HealthBase {
     private SpriteRenderer rendererComponent;
     private bool hasSpawned = false;
 
+    // index 0 = normal shot
+    // index 1 = homing missile
     void Start() {
         weapon = GetComponentInChildren<Weapon>(); 
         rendererComponent = GetComponent<SpriteRenderer>();
 
-        if (player == null) player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+        if (player == null) 
+            player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
     }
 
     void Update() {
-        if (!hasSpawned && rendererComponent.isVisible) hasSpawned = true;
+        // Wait for the enemy to appear within view
+        if (!hasSpawned && rendererComponent.isVisible)
+            hasSpawned = true;
         if (!hasSpawned) return;
 
-        if (weapon != null && weapon.CanAttack) {
-            weapon.Attack(false);
+        if (weapon != null) {
+            if (weapon.CanAttack(0)) // normal shot
+                weapon.Attack(0, false);
+
+            if (weapon.CanAttack(1)) // homing missile
+                weapon.Attack(1, false);
         }
 
-        if (!rendererComponent.isVisible && hp > 0) 
+        // Destroy out of screen if still alive:
+        if (!rendererComponent.isVisible && hp > 0)
             Destroy(gameObject);
     }
 
     private void OnDestroy() {
-        if (hp <= 0)
+        if (hp <= 0) {
             player.IncreaseScore(1);
+        }
     }
 }

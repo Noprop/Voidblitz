@@ -12,10 +12,9 @@ GameObject:
   - component: {fileID: 4582070499352426256}
   - component: {fileID: 5895413282540941792}
   - component: {fileID: 1169916408318547833}
-  - component: {fileID: 3327705129585478334}
-  - component: {fileID: 6041911545501247756}
+  - component: {fileID: 7936053370526298905}
   m_Layer: 0
-  m_Name: PlayerShot
+  m_Name: EnemyShot2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29,13 +28,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2623276495626140407}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.17, y: -0.35, z: 0}
-  m_LocalScale: {x: 1.25, y: 1.25, z: 1}
+  m_LocalScale: {x: 0.55, y: 0.55, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4582070499352426256
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -80,7 +79,7 @@ SpriteRenderer:
   m_SortingLayerID: 269498345
   m_SortingLayer: 4
   m_SortingOrder: 0
-  m_Sprite: {fileID: -5902895905303043889, guid: 54ee46ac4d573436aad94054e64f8da0, type: 3}
+  m_Sprite: {fileID: 1079472237022027614, guid: 54ee46ac4d573436aad94054e64f8da0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -156,7 +155,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.25, y: 0.25}
+    oldSize: {x: 1.12, y: 2.39}
     newSize: {x: 0.25, y: 0.25}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -164,7 +163,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.25, y: 0.25}
   m_EdgeRadius: 0
---- !u!114 &3327705129585478334
+--- !u!114 &7936053370526298905
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -173,22 +172,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2623276495626140407}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a20e50aa0c5040259c016f0cb5ae473, type: 3}
+  m_Script: {fileID: 11500000, guid: bd620a0c029e1433d8cbfd3a206d4401, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1
+  speed: 12
+  rotateSpeed: 200
+  damage: 3
   fromPlayer: 1
---- !u!114 &6041911545501247756
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2623276495626140407}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e70ffed969ae34041b5058d5b757c0b8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: {x: 25, y: 25}
-  direction: {x: 1, y: 0}

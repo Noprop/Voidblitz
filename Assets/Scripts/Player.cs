@@ -46,7 +46,7 @@ public class Player : HealthBase {
         if (shoot || shoot2) {
             Weapon weapon = GetComponentInChildren<Weapon>();
             if (weapon != null) {
-                weapon.Attack(true);
+                weapon.Attack(0, true);
             }
         }
 

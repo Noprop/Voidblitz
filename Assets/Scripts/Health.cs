@@ -34,6 +34,14 @@ public class HealthBase : MonoBehaviour {
                 Damage(shot.damage);
                 Destroy(shot.gameObject);
             }
+            return;
+        }
+        HomingMissile missile = other.gameObject.GetComponent<HomingMissile>();
+        if (missile != null) {
+            if (missile.fromPlayer && isEnemy || !missile.fromPlayer && !isEnemy) {
+                Damage(missile.damage);
+                Destroy(missile.gameObject);
+            }
         }
     }
 }
