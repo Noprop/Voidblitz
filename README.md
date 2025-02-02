@@ -1,5 +1,5 @@
 
-Space wallpaper (not used):
+Space wallpaper (background of main menu):
 
 https://wallpaperaccess.com/4k-nebula
 
@@ -15,11 +15,9 @@ Planet sprites:
 
 https://www.deviantart.com/cluly/art/Planet-Assets-771586986
 
-
 Asteroids that explode:
 
 https://foozlecc.itch.io/void-environment-pack
-
 
 Font:
 
